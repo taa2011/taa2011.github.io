@@ -10,6 +10,7 @@
 <body>
 
   <div id='map' style='width: 1400px; height: 900px;'></div>
+  <nav id="filter-group" class="filter-group"></nav>
   <script>
     // var map = new maplibregl.Map({
     //   container: 'map',
@@ -124,6 +125,7 @@
       ]
     };
 
+    var filterGroup = document.getElementById('filter-group');
     // Initialise the map
     const map = new maplibregl.Map({
       container: 'map',
