@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "railways",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "Железнодорожный вокзал г. Кемерово" }, "geometry": { "type": "Point", "coordinates": [ 86.059878046959497, 55.344298431817982 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "Железнодородный вокзал Юрга" }, "geometry": { "type": "Point", "coordinates": [ 84.841632167548156, 55.712761424286988 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "Железнодорожный вокзал Анжерский" }, "geometry": { "type": "Point", "coordinates": [ 86.048169967276749, 56.07619739407771 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "Железнодорожный вокзал Мариинск" }, "geometry": { "type": "Point", "coordinates": [ 87.741179039397451, 56.213328099910029 ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "Железнодорожный вокзал Ленинск-Кузнецкий" }, "geometry": { "type": "Point", "coordinates": [ 86.172974844628243, 54.679481906573464 ] } },
+{ "type": "Feature", "properties": { "id": 6, "name": "Железнодорожный вокзал Белово" }, "geometry": { "type": "Point", "coordinates": [ 86.312658739966409, 54.411512822305262 ] } },
+{ "type": "Feature", "properties": { "id": 7, "name": "Железнодорожный вокзал Прокопьевск" }, "geometry": { "type": "Point", "coordinates": [ 86.745580126729379, 53.906956300911823 ] } },
+{ "type": "Feature", "properties": { "id": 8, "name": "Железнодорожный вокзал Новокузнецк" }, "geometry": { "type": "Point", "coordinates": [ 87.117547164645472, 53.746782254688164 ] } },
+{ "type": "Feature", "properties": { "id": 9, "name": "Железнодорожный вокзал Мыски" }, "geometry": { "type": "Point", "coordinates": [ 87.743749994583865, 53.74327718626401 ] } },
+{ "type": "Feature", "properties": { "id": 10, "name": "Железнодорожный вокзал Междуреченск" }, "geometry": { "type": "Point", "coordinates": [ 88.02229911686635, 53.699088932133151 ] } }
+]
+}

@@ -12,13 +12,6 @@
   <div id='map' style='width: 1400px; height: 900px;'></div>
   <nav id="filter-group" class="filter-group"></nav>
   <script>
-    // var map = new maplibregl.Map({
-    //   container: 'map',
-    //   style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-    //   center: [-74.5, 40], // starting position [lng, lat]
-    //   zoom: 9 // starting zoom
-    // });
-
 
     const style = {
       "version": 8,
@@ -33,6 +26,10 @@
         "kem_obl": {
           "type": "geojson",
           "data": "./kem_obl.geojson"
+        },
+        "railways": {
+          "type": "geojson",
+          "data": "./railways.geojson"
         }
       },
       "layers": [
@@ -45,82 +42,11 @@
           "id": "kem_obl",
           "type": "line",
           "source": "kem_obl"
-        }
-      ]
-    };
-
-    var places = {
-      'type': 'FeatureCollection',
-      'features': [
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'theatre'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.038659, 38.931567]
-          }
         },
         {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'theatre'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.003168, 38.894651]
-          }
-        },
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'bar'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.090372, 38.881189]
-          }
-        },
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'bicycle'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.052477, 38.943951]
-          }
-        },
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'music'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.031706, 38.914581]
-          }
-        },
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'music'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.020945, 38.878241]
-          }
-        },
-        {
-          'type': 'Feature',
-          'properties': {
-            'icon': 'music'
-          },
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [-77.007481, 38.876516]
-          }
+          "id": "railways",
+          "type": "line",
+          "source": "railways"
         }
       ]
     };
@@ -137,6 +63,8 @@
     map.on('load', function () {
       // Add a GeoJSON source containing place coordinates and information.
 
+      
+      
       var input = document.createElement('input');
       input.type = 'checkbox';
       input.id = 'kem_obl';
@@ -145,12 +73,31 @@
 
       var label = document.createElement('label');
       label.setAttribute('for', 'kem_obl');
-      label.textContent = 'K';
+      label.textContent = 'Border';
       filterGroup.appendChild(label);
 
       input.addEventListener('change', function (e) {
         map.setLayoutProperty(
           'kem_obl',
+          'visibility',
+          e.target.checked ? 'visible' : 'none'
+        );
+      });
+
+      var input = document.createElement('input');
+      input.type = 'checkbox';
+      input.id = 'railways';
+      input.checked = true;
+      filterGroup.appendChild(input);
+
+      var label = document.createElement('label');
+      label.setAttribute('for', 'railways');
+      label.textContent = 'Railways';
+      filterGroup.appendChild(label);
+
+      input.addEventListener('change', function (e) {
+        map.setLayoutProperty(
+          'railways',
           'visibility',
           e.target.checked ? 'visible' : 'none'
         );
